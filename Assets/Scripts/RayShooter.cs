@@ -5,21 +5,21 @@ public class RayShooter : MonoBehaviour {
 	[SerializeField] GameObject Sphere;
 	public bool isAlive;
 
-	private Camera camera;
+	private Camera mainCamera;
 
 	void Start () {
 		isAlive = true; 
-		camera = GetComponent<Camera> ();
+		mainCamera = GetComponent<Camera> ();
 		Cursor.lockState = CursorLockMode.Locked; 
 	}
 
 	void Update () {
 
 		if ((Input.GetMouseButtonDown (0)) && (isAlive == true)) {
-			Vector3 origin = new Vector3 (camera.pixelWidth / 2,
-				camera.pixelHeight / 2,
+			Vector3 origin = new Vector3 (mainCamera.pixelWidth / 2,
+                mainCamera.pixelHeight / 2,
 				0);
-			Ray ray = camera.ScreenPointToRay (origin);
+			Ray ray = mainCamera.ScreenPointToRay (origin);
 			RaycastHit hit;
 			if(Physics.Raycast(ray, out hit)){
 				StartCoroutine (Shoot (hit.point));    
@@ -40,9 +40,13 @@ public class RayShooter : MonoBehaviour {
 
 	public void YouDied(){
 
-		isAlive = false; 
+		isAlive = false;
+        Cursor.lockState = CursorLockMode.None;
+        //Destroy(GetComponent<MouseLook>());
+        //Destroy(GetComponent<FPSInput>());
+        //Destroy(this);
 
-	}
+    }
 
 
 }

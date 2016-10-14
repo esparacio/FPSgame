@@ -68,11 +68,6 @@ public class Fireball : MonoBehaviour {
 					
 				} else {
 
-					//if (trigger == false) {
-					//	print ("Wait");
-					//	StartCoroutine (Wait ());
-					//}
-
                     StartCoroutine(DamageFeedback());
                     Debug.Log("Coroutine ended");
 
@@ -82,12 +77,6 @@ public class Fireball : MonoBehaviour {
         }
     }
 
-	//public IEnumerator Wait() {
-	//	trigger = false;
-	//	yield return new WaitForSeconds(5f);
-        //trigger = true;
-        //Debug.Log("trigger true");
-    //}
 
     public IEnumerator DamageFeedback() {
         //damageImage.color = flashColor;
@@ -95,7 +84,7 @@ public class Fireball : MonoBehaviour {
         //damageImage.color = Color.clear;
 
         yield return new WaitForSeconds(flashSpeed);
-        Debug.Log("Coroutine ended");
+        //Debug.Log("Coroutine ended");
     }
 
 }
