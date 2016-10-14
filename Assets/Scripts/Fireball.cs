@@ -9,7 +9,6 @@ public class Fireball : MonoBehaviour {
 	public Image damageImage;                                   
 	public float flashSpeed = 2f;                               
 	public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
-	public Color deathColor = new Color(0, 0, 0, 1);
 	public bool trigger;
 
 
@@ -27,16 +26,16 @@ public class Fireball : MonoBehaviour {
 	
 	}
 
-	void Death(float newHealth){
+	void Death(){
 
-		healthSlider.value = newHealth;
+		//healthSlider.value = newHealth;
 		damageImage.color = new Color (0, 0, 0, 0.6f);
 
 		GameObject loseObject = GameObject.Find ("Win");
 		Text textObject = loseObject.GetComponent<Text>();
 		textObject.text = "You lose... ";
 	
-		GameObject canvas = GameObject.Find ("ReplayCanvas");
+		GameObject canvas = GameObject.Find ("ReplayButton");
 		CanvasGroup replay = canvas.GetComponent<CanvasGroup> ();
 		replay.alpha = 1;
 
@@ -51,42 +50,52 @@ public class Fireball : MonoBehaviour {
 		
         GameObject collidedWith = coll.gameObject;
 
+        //Ignore collisions with enemy
         if (collidedWith.tag != "enemy") {
             Destroy(this.gameObject);
+
+            //Fireball has hit the player
             if (collidedWith.tag == "Player") {
 
-				damageImage.color = flashColor;
-				float newHealth = healthSlider.value - 1;
+                //Set the damage color and decrease health
+                
+                healthSlider.value--;
 
-				//Death screen
-				if (newHealth < 1) {
+                //Death screen
+                if (healthSlider.value < 1) {
 
-					Death (newHealth);
+					Death();
 					
 				} else {
-					//lose health
-					healthSlider.value = newHealth;
 
-					if (trigger == false) {
-						print ("Wait");
-						StartCoroutine (Wait ());
-					}
+					//if (trigger == false) {
+					//	print ("Wait");
+					//	StartCoroutine (Wait ());
+					//}
 
-					//A small pause
-					damageImage.color = Color.clear;
-
-				}
+                    StartCoroutine(DamageFeedback());
+                    Debug.Log("Coroutine ended");
 
 
-
+                }
             }
         }
     }
 
-	public IEnumerator Wait() {
-		trigger = false;
-		yield return new WaitForSeconds(5f); 
-		trigger = true;  
-	}
-		
+	//public IEnumerator Wait() {
+	//	trigger = false;
+	//	yield return new WaitForSeconds(5f);
+        //trigger = true;
+        //Debug.Log("trigger true");
+    //}
+
+    public IEnumerator DamageFeedback() {
+        //damageImage.color = flashColor;
+        //yield return new WaitForSeconds(.5f);
+        //damageImage.color = Color.clear;
+
+        yield return new WaitForSeconds(flashSpeed);
+        Debug.Log("Coroutine ended");
+    }
+
 }

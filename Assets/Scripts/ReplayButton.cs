@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ReplayButton : MonoBehaviour {
 
@@ -13,12 +14,7 @@ public class ReplayButton : MonoBehaviour {
 	
 	}
 
-	public void OnMouseDown(){
-		transform.localScale = new Vector3 (1.1f, 1.1f, 1.1f);
-	}
-
-	public void OnMouseUp(){
-		transform.localScale = Vector3.one;
-		print ("Replay!");
-	}
+    public void Replay() {
+        SceneManager.LoadScene("scene_0");
+    }
 }
