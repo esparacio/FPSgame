@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSgame.CSharp", "FPSgame.CSharp.csproj", "{0081F638-F37E-DCFA-917B-A422ABC57E30}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{303963AA-4FC0-4EFC-38BF-CD0FC370E11F}") = "FPSgame", "Assembly-CSharp.csproj", "{F70DA7BD-F214-B8B8-62CF-9CB37660EECF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0081F638-F37E-DCFA-917B-A422ABC57E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0081F638-F37E-DCFA-917B-A422ABC57E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0081F638-F37E-DCFA-917B-A422ABC57E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0081F638-F37E-DCFA-917B-A422ABC57E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70DA7BD-F214-B8B8-62CF-9CB37660EECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70DA7BD-F214-B8B8-62CF-9CB37660EECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70DA7BD-F214-B8B8-62CF-9CB37660EECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70DA7BD-F214-B8B8-62CF-9CB37660EECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

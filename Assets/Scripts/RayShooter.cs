@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+	By Elena Sparacio and Patrick Lathan
+	Copyright (C) 2016
+	Full Credits in the README
+*/ 
+
 public class RayShooter : MonoBehaviour {
 	[SerializeField] GameObject Sphere;
 	public bool isAlive;
@@ -42,9 +48,6 @@ public class RayShooter : MonoBehaviour {
 
 		isAlive = false;
         Cursor.lockState = CursorLockMode.None;
-        //Destroy(GetComponent<MouseLook>());
-        //Destroy(GetComponent<FPSInput>());
-        //Destroy(this);
 
     }
 

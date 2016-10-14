@@ -31,9 +31,13 @@ CREDITS:
 
 	Picture Credits:
 		-Heart: https://en.wikipedia.org/wiki/Heart_(symbol)#/media/File:Heart_coraz%C3%B3n.svg
+		-Target: //https://pixabay.com/en/target-circle-bullseye-achievement-39708/
+		-Textures: http://www.tutorialsforblender3d.com/Textures/Textures_index.html
 
 	Tutorials: 
+		-Shannon’s “Maze” and “Maze walking and shooting” tutorials
 		-https://unity3d.com/learn/tutorials/projects/survival-shooter/player-health?playlist=17144
+
 
 	From the Unity Asset Store:
 		-Dragon statue 

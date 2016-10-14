@@ -2,8 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 
-//Image
-//https://pixabay.com/en/target-circle-bullseye-achievement-39708/
+/*
+	By Elena Sparacio and Patrick Lathan
+	Copyright (C) 2016
+	Full Credits in the README
+*/ 
+
 
 public class Target : MonoBehaviour {
 	[SerializeField] GameObject target;

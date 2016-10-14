@@ -2,6 +2,12 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+/*
+	By Elena Sparacio and Patrick Lathan
+	Copyright (C) 2016
+	Full Credits in the README
+*/ 
+
 public class ReplayButton : MonoBehaviour {
 
 	// Use this for initialization
@@ -14,6 +20,7 @@ public class ReplayButton : MonoBehaviour {
 	
 	}
 
+	//Restart scene when Replay is clicked!
     public void Replay() {
         SceneManager.LoadScene("scene_0");
     }

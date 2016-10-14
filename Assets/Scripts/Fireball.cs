@@ -2,6 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/*
+	By Elena Sparacio and Patrick Lathan
+	Copyright (C) 2016
+	Full Credits in the README
+*/ 
+
 public class Fireball : MonoBehaviour {
 
 	//This code was adapted from the unity 3d tutorial credited in the readme
@@ -68,8 +74,10 @@ public class Fireball : MonoBehaviour {
 					
 				} else {
 
-                    StartCoroutine(DamageFeedback());
-                    Debug.Log("Coroutine ended");
+					//wanted to change color when damaged, but couldn't figure it out 
+					//damageImage.color = Color.Lerp(flashColor, Color.clear, Time.deltaTime * 100f);
+					//damageImage.color = Color.Lerp(Color.clear, flashColor, Time.deltaTime * 0.5f);
+
 
 
                 }
@@ -78,13 +86,5 @@ public class Fireball : MonoBehaviour {
     }
 
 
-    public IEnumerator DamageFeedback() {
-        //damageImage.color = flashColor;
-        //yield return new WaitForSeconds(.5f);
-        //damageImage.color = Color.clear;
-
-        yield return new WaitForSeconds(flashSpeed);
-        //Debug.Log("Coroutine ended");
-    }
 
 }
